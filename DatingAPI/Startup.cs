@@ -30,6 +30,8 @@ namespace DatingAPI
         {
             services.AddDbContext<TodoContext>(opt =>
                                               opt.UseInMemoryDatabase("TodoList"));
+
+        
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -58,15 +60,6 @@ namespace DatingAPI
                 endpoints.MapControllers();
             });
 
-            var context = app.ApplicationServices.GetService<DbContext>();
-            AddTestData(context);
-
-            //app.UseMvc();
-        }
-
-        private void AddTestData(DbContext context)
-        {
-            throw new NotImplementedException();
         }
     }
 }
